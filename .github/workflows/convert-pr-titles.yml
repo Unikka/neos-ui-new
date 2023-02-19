@@ -15,6 +15,6 @@ jobs:
             TASK
             FEATURE
             BUGFIX
-          requireScope: false
+          action: comment
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
