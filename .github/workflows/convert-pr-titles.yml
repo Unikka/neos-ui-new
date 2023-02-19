@@ -10,21 +10,16 @@ jobs:
     steps:
       - name: Check pull request title
         id: check_title
-        run: echo "::set-output name=title_changed::$(echo '${{ github.event.pull_request.title }}' | grep -iq '^task:' && echo true || echo false)"
-      - name: Update pull request title with task
+        run: |
+          if echo "${{ github.event.pull_request.title }}" | grep -iq "^task:"; then
+            echo "::set-output name=title_changed::true"
+          else
+            echo "::set-output name=title_changed::false"
+          fi
+      - name: Update pull request title
         if: steps.check_title.outputs.title_changed == 'true'
         uses: peter-evans/update-pull-request-title@v1
         with:
           title: ${{ github.event.pull_request.title ^(?i)task: TASK: }}
-      - name: Update pull request title with bugfix
-        if: steps.check_title.outputs.title_changed == 'true'
-        uses: peter-evans/update-pull-request-title@v1
-        with:
-          title: ${{ github.event.pull_request.title ^(?i)bugfix: BUGFIX: }}
-      - name: Update pull request title with feature
-        if: steps.check_title.outputs.title_changed == 'true'
-        uses: peter-evans/update-pull-request-title@v1
-        with:
-          title: ${{ github.event.pull_request.title ^(?i)feature: FEATURE: }}
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
