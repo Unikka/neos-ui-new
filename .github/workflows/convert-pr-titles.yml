@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update pull request title
-        uses: roseline124/action-semantic-pull-request@v1
+        uses: roseline124/pr-title-convention@v1.0.2
         with:
           types: |
             TASK
