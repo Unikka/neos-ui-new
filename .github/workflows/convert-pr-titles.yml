@@ -16,6 +16,5 @@ jobs:
             FEATURE
             BUGFIX
           requireScope: false
-          action: autofix
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
