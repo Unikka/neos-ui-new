@@ -16,7 +16,7 @@ That means:
 
 ### Currently maintained versions
 
-* NeosCMS version 7.3: branch 7.3
+* NeosCMS version 7.3: branch 7.3dsad
 * NeosCMS version 8.0: branch 8.0
 * NeosCMS version 8.1: branch 8.1
 * NeosCMS version 8.2: branch 8.2
