@@ -9,11 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update pull request title
-        uses: amannn/action-semantic-pull-request@v5
+        uses: roseline124/action-semantic-pull-request@v1
         with:
           types: |
             TASK
             FEATURE
             BUGFIX
+          requireScope: false
+          action: autofix
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
