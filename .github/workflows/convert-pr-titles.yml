@@ -11,10 +11,6 @@ jobs:
       - name: Update pull request title
         uses: roseline124/pr-title-convention@v1.0.2
         with:
-          types: |
-            TASK
-            FEATURE
-            BUGFIX
           action: comment
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
