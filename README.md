@@ -44,7 +44,7 @@ If you discover bugs in any of the supported browsers, please [report them](http
 ## Installation and usage
 
 The UI is [already included](https://github.com/neos/neos-base-distribution/blob/3.3/composer.json#L24) in the base Neos distribution.
-And on Packagist available via: `neos/neos-ui`
+And on c available via: `neos/neos-ui`
 
 
 ### Updating
