@@ -2,24 +2,18 @@ name: Convert task titles to uppercase
 
 on:
   pull_request:
-    types: [opened, edited]
+    types: [opened, edited, synchronize]
 
 jobs:
   convert-tasks:
     runs-on: ubuntu-latest
     steps:
-      - name: Check pull request title
-        id: check_title
-        run: |
-          if echo "${{ github.event.pull_request.title }}" | grep -iq "^task:"; then
-            echo "::set-output name=title_changed::true"
-          else
-            echo "::set-output name=title_changed::false"
-          fi
       - name: Update pull request title
-        if: steps.check_title.outputs.title_changed == 'true'
-        uses: peter-evans/update-pull-request-title@v1
+        uses: roseline124/action-semantic-pull-request@v1.0.2
         with:
-          title: ${{ github.event.pull_request.title ^(?i)task: TASK: }}
+          types: |
+            TASK
+            FEATURE
+            BUGFIX
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
