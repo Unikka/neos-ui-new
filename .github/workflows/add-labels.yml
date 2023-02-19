@@ -9,29 +9,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add target branch label
-        uses: actions/checkout@v2
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: ${{ github.event.pull_request.base.ref }}
       - name: Add feature label
         if: startsWith(github.event.pull_request.title, 'FEATURE:')
-        uses: actions/checkout@v2
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: 'feature'
       - name: Add bugfix label
         if: startsWith(github.event.pull_request.title, 'BUGFIX:')
-        uses: actions/checkout@v2
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: 'bugfix'
       - name: Add task label
         if: startsWith(github.event.pull_request.title, 'TASK:')
-        uses: actions/checkout@v2
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: 'task'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
