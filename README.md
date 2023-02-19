@@ -14,7 +14,7 @@ That means:
 * All new features go only to the 8.3 branch
 * New minor and major releases are made in sync with Neos/Flow. Bugfix releases may be available independantly
 
-### Currently maintained versions
+### Currently maintained versionsd
 
 * NeosCMS version 7.3: branch 7.3
 * NeosCMS version 8.0: branch 8.0
