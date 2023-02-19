@@ -1,4 +1,4 @@
-name: Convert task titles to uppercase
+name: Validate PR titles
 
 on:
   pull_request:
