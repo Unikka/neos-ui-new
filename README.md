@@ -118,7 +118,7 @@ make setup
 Please see [our guideline](https://neos.readthedocs.io/en/latest/Contribute/Documentation/BeginnersGuide.html#guideline-commit-messages)
 on how to write meaningful descriptions for your contributions.
 
-#### Doing upmerges
+#### Doing upmerges test 
 
 To do the upmerge run the following commands
 
