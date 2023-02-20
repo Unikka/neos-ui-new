@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get base branch
-        if: github.event.action == 'synchronize'
+        if: github.event.action == 'edited'
         run: |
           echo "New base branch: ${{ github.event.pull_request.base.ref }}"
           echo "Old base branch: ${{ github.event.changes.base.from }}"
