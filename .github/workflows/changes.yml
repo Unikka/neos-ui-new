@@ -8,6 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug event payload
+        env:
+          GITHUB_EVENT: ${{ toJson(github.event) }}
+        run: |
+          echo "$GITHUB_EVENT"
+          echo "$GITHUB_EVENT" > event.json
+          cat event.json | jq .changes
       - name: Get PR title
         run: |
           echo "New title: ${{ github.event.pull_request.title }}"
