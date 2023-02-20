@@ -8,6 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Get PR title
+        run: |
+          echo "New title: ${{ github.event.pull_request.title }}"
+          echo "Old title: ${{ github.event.changes.title.from }}"
       - name: Get base branch
         if: github.event.action == 'edited'
         run: |
