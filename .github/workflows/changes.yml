@@ -1,3 +1,5 @@
+name: Check changes (edit PR)
+
 on:
   pull_request:
     types: [opened, edited]
