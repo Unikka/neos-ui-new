@@ -23,4 +23,4 @@ jobs:
         if: github.event.action == 'edited'
         run: |
           echo "New base branch: ${{ github.event.pull_request.base.ref }}"
-          echo "Old base branch: ${{ github.event.changes.base }}"
+          echo "Old base branch: ${{ github.event.changes.base.ref.from }}"
