@@ -4,7 +4,7 @@
 
 > The Neos CMS interface written in ReactJS and a ton of other fun technology.
 
-## Versioning
+## Versioningd
 
 This repository follows the same versioning scheme as Neos itself.
 Release roadmap is [available here](https://www.neos.io/features/release-process.html)
